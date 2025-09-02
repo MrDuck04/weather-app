@@ -22,7 +22,7 @@ BASE_URL = "http://api.openweathermap.org/data/2.5/weather"
 
 #3.route: get weather by city
 #response model
-@app.get("/weather/{city}", response_model= WeatherResponse)
+@app.get("/{city}", response_model= WeatherResponse)
 def get_weather(city:str):
     params = {
             "q": city,
@@ -46,7 +46,7 @@ def get_weather(city:str):
 
 #4. Root route
 
-@app.get("/")
+@app.get("/hi")
 def home():
      return {"message":  "Hello! I am Abror Mahir! "
      "Welcome to my Weather API (Version 1.0)"}
